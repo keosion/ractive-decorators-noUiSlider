@@ -1,0 +1,13 @@
+{
+	"name": "ractive-decorators-noUiSlider",
+	"repo": "git://github.com/keosion/ractive-decorators-noUiSlider.git",
+	"description": "ractive-decorators-noUiSlider",
+	"version": "0.1.0",
+	"keywords": [],
+	"development": {},
+	"license": "WTFPL",
+	"main": "ractive-decorators-noUiSlider.js",
+	"scripts": [
+		"ractive-decorators-noUiSlider.js"
+	]
+}

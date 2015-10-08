@@ -1,0 +1,12 @@
+{
+	"name": "ractive-decorators-noUiSlider",
+	"version": "0.1.0",
+	"author": "Jeremy Bouquain",
+	"main": "ractive-decorators-noUiSlider.js",
+	"ignore": [
+		"**/.*",
+		"src",
+		"test",
+		"Gruntfile.js"
+	]
+}

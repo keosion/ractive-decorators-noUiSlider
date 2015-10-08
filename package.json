@@ -1,0 +1,22 @@
+{
+  "name": "ractive-decorators-noUiSlider",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jeremy Bouquain"
+  },
+  "main": "ractive-decorators-noUiSlider.js",
+  "description": "ractive-decorators-noUiSlider plugin for Ractive.js",
+  "dependencies": {
+    "ractive": ">= 0.4.0",
+    "nouislider": ">=8.0.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-qunit": "~0.4.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-jshint": "~0.9.2",
+    "grunt-contrib-copy": "~0.5.0"
+  }
+}
