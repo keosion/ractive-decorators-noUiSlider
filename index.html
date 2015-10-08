@@ -1,127 +1,83 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Ractive-decorators-nouislider by keosion</title>
+<html lang='en-GB'>
+<head>
+	<meta charset='utf-8'>
+	<title>Ractive.js noUiSlider decorator plugin</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Ractive-decorators-nouislider</h1>
-        <p></p>
-
-        <p class="view"><a href="https://github.com/keosion/ractive-decorators-noUiSlider">View the Project on GitHub <small>keosion/ractive-decorators-noUiSlider</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/keosion/ractive-decorators-noUiSlider/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/keosion/ractive-decorators-noUiSlider/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/keosion/ractive-decorators-noUiSlider">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <p>&lt;!doctype html&gt;
-
-</p>
+	<!-- CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' href='demo/main.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.css'>
     
-    Ractive.js noUiSlider decorator plugin
-
-<pre><code>&lt;!-- CSS --&gt;
-&lt;link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'&gt;
-&lt;link rel='stylesheet' href='demo/main.css'&gt;
-&lt;link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.css'&gt;
-
-&lt;style&gt;
-    .noUi-target {
-        margin: 10px 0;
-    }
-&lt;/style&gt;
-</code></pre>
-
-<p></p>
-
-<p></p>
-
-<pre><code>&lt;a class='forkme' href='https://github.com/keosion/ractive-decorators-noUiSlider'&gt;Fork me on GitHub&lt;/a&gt;
-
-&lt;header&gt;
-    &lt;h1&gt;Ractive.js noUiSlider decorator plugin&lt;/h1&gt;
-    &lt;p class='strap'&gt;
-        &lt;span class='download'&gt;download: &lt;a href='https://github.com/keosion/ractive-decorators-noUiSlider'&gt;ractive-decorators-noUiSlider.js&lt;/a&gt;&lt;/span&gt;
-        &lt;span class='more-plugins'&gt;more plugins at &lt;a href='http://ractivejs.org/plugins'&gt;ractivejs.org/plugins&lt;/a&gt;&lt;/span&gt;
-    &lt;/p&gt;
-&lt;/header&gt;
-
-&lt;main&gt;
-    &lt;p&gt;Integrate &lt;a href='http://refreshless.com/nouislider/'&gt;noUiSlider&lt;/a&gt; with Ractive, including two-way binding.&lt;/p&gt;
-    &lt;p&gt;In order to pass options to the noUiSlider constructor, add an options object to the decorator &lt;tt&gt;type&lt;/tt&gt; property as seen in
-    the demo below.&lt;/p&gt;
-
-    &lt;div id='demo' class='clearfix'&gt;&lt;/div&gt;
-
-    &lt;pre id='demo-template-view' class='prettyprint lang-html'&gt;&lt;/pre&gt;
-    &lt;pre id='demo-code-view' class='prettyprint lang-js'&gt;&lt;/pre&gt;
-&lt;/main&gt;
-
-&lt;footer&gt;
-    &lt;p&gt;Copyright &amp;copy; 2014 &lt;a href="http://www.prezent.nl"&gt;Prezent Internet B.V.&lt;/a&gt; Licensed MIT&lt;/p&gt;
-&lt;/footer&gt;
-
-&lt;!-- Demo template --&gt;
-&lt;script id='demo-template' type='text/ractive'&gt;
-    &lt;input id='demo-input' decorator='noUiSlider:demo' type='text' value='{{value}}' autocomplete='off' placeholder='Demo'&gt;
-    &lt;button on-click='reset-data'&gt;Reset (two-way binding)&lt;/button&gt;
-    &lt;p&gt;Value: {{value}}&lt;/p&gt;
-&lt;/script&gt;
-
-&lt;!-- Dependencies --&gt;
-&lt;script src='http://code.jquery.com/jquery-2.1.1.min.js'&gt;&lt;/script&gt;
-&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.js'&gt;&lt;/script&gt;
-&lt;script src='http://cdn.ractivejs.org/latest/ractive.js'&gt;&lt;/script&gt;
-&lt;script src='ractive-decorators-noUiSlider.js'&gt;&lt;/script&gt;
-
-&lt;!-- Demo code --&gt;
-&lt;script id='demo-code'&gt;
-    // define noUiSlider options
-    Ractive.decorators.noUiSlider.type.demo = {
-        range: {'min': 0, 'max': 100}, step: 5,
-        start: 50, margin: 10
-    };        
-
-    ractive = new Ractive({
-        el: 'demo',
-        template: '#demo-template',
-        data: {
-            value: 50
+    <style>
+        .noUi-target {
+            margin: 10px 0;
         }
-    });
+    </style>
+</head>
 
-    ractive.on('reset-data', function(event) {
-        this.set('value', 50);
-    });
-&lt;/script&gt;
+<body>
 
-&lt;script src='demo/prettify.js'&gt;&lt;/script&gt;
-&lt;script src='demo/demo.js'&gt;&lt;/script&gt;
-</code></pre>
+	<a class='forkme' href='https://github.com/keosion/ractive-decorators-noUiSlider'>Fork me on GitHub</a>
 
-<p>
-</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/keosion">keosion</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+	<header>
+		<h1>Ractive.js noUiSlider decorator plugin</h1>
+		<p class='strap'>
+			<span class='download'>download: <a href='https://github.com/keosion/ractive-decorators-noUiSlider'>ractive-decorators-noUiSlider.js</a></span>
+			<span class='more-plugins'>more plugins at <a href='http://ractivejs.org/plugins'>ractivejs.org/plugins</a></span>
+		</p>
+	</header>
+
+	<main>
+        <p>Integrate <a href='http://refreshless.com/nouislider/'>noUiSlider</a> with Ractive, including two-way binding.</p>
+        <p>In order to pass options to the noUiSlider constructor, add an options object to the decorator <tt>type</tt> property as seen in
+        the demo below.</p>
+
+		<div id='demo' class='clearfix'></div>
+
+		<pre id='demo-template-view' class='prettyprint lang-html'></pre>
+		<pre id='demo-code-view' class='prettyprint lang-js'></pre>
+	</main>
+
+	<footer>
+        <p>Copyright &copy; 2014 <a href="http://www.prezent.nl">Prezent Internet B.V.</a> Licensed MIT</p>
+	</footer>
+
+	<!-- Demo template -->
+	<script id='demo-template' type='text/ractive'>
+        <input id='demo-input' decorator='noUiSlider:demo' type='text' value='{{value}}' autocomplete='off' placeholder='Demo'>
+        <button on-click='reset-data'>Reset (two-way binding)</button>
+        <p>Value: {{value}}</p>
+	</script>
+
+	<!-- Dependencies -->
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.js'></script>
+    <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+    <script src='ractive-decorators-noUiSlider.js'></script>
+
+	<!-- Demo code -->
+	<script id='demo-code'>
+        // define noUiSlider options
+        Ractive.decorators.noUiSlider.type.demo = {
+            range: {'min': 0, 'max': 100}, step: 5,
+            start: 50, margin: 10
+        };        
+
+        ractive = new Ractive({
+            el: 'demo',
+            template: '#demo-template',
+            data: {
+                value: 50
+            }
+        });
+
+        ractive.on('reset-data', function(event) {
+            this.set('value', 50);
+        });
+	</script>
+
+	<script src='demo/prettify.js'></script>
+	<script src='demo/demo.js'></script>
+</body>
 </html>
